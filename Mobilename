@@ -1,0 +1,22 @@
+package helloworld;
+
+public class MobileName {
+	public static void main(String[] args) {
+	String mobileBrandName = "minotepro";
+	char mobileLogo = '%';
+	int modelNumber = 12;
+	long mobileImeinumber = 548379852L;
+	float mobilePrice = 12000.00f;
+	boolean isDamaged = false;
+	short noOfMobilePiece = 24;
+	
+	System.out.println(mobileBrandName);
+	System.out.println(mobileLogo);
+	System.out.println(modelNumber);
+	System.out.println(mobileImeinumber);
+	System.out.println(mobilePrice);
+	System.out.println(isDamaged);
+	System.out.println(noOfMobilePiece);
+	}
+	
+}

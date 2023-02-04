@@ -1,0 +1,16 @@
+package helloworld;
+
+public class HelloWorld  {
+	public static void main(String[] args) {
+		int a = 5;
+		byte b = 114;
+		char name = 'B';
+		long value = 9887576L;
+		
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(name);
+		System.out.println(value);
+	}
+	
+}

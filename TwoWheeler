@@ -1,0 +1,22 @@
+package helloworld;
+
+public class Twowheeler {
+	public static void main(String[] args) {
+		
+	int noOfWheels = 2;
+	short noOfMirrors  = 3;
+	long chassisNumber = 6757876l;
+	boolean ispunctured = false;
+	String bikeName = "yamahacrux" ;
+	double runningKM = 876.6F;
+	
+	System.out.println(noOfWheels);
+	System.out.println(noOfMirrors);
+	System.out.println(chassisNumber);
+	System.out.println(ispunctured);
+	System.out.println(bikeName);
+	System.out.println(runningKM);
+	
+	
+	}
+}

@@ -1,0 +1,76 @@
+package week2.Day2; 
+
+import org.openqa.selenium.By; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.chrome.ChromeDriver; 
+
+public class LeafGround { 
+
+        public static void main(String[] args) throws InterruptedException { 
+                // TODO Auto-generated method stub 
+                ChromeDriver driver=new ChromeDriver(); 
+               
+               driver.get("https://www.leafground.com/input.xhtml"); 
+               driver.manage().window().maximize(); 
+               driver.findElement(By.xpath("//input[@id='j_idt88:name']")).sendKeys("Bhadra"); 
+               driver.findElement(By.xpath("//input[@id='j_idt88:j_idt91']")).sendKeys("India"); 
+              
+               boolean enabled = driver.findElement(By.xpath("//input[@id='j_idt88:j_idt93']")).isEnabled(); 
+               //System.out.println(enabled); 
+                
+               Thread.sleep(1000); 
+             if(enabled==false) 
+               { 
+                       System.out.println("Disabled"); 
+                       
+               } 
+               else 
+                       { 
+                       System.out.println("Enabled"); 
+                       } 
+                
+                driver.findElement(By.xpath("//input[@id='j_idt88:j_idt95']")).clear(); 
+                WebElement f = driver.findElement(By.xpath("//input[@id='j_idt88:j_idt97']")); 
+                      System.out.println(f.getAttribute("value")); 
+               //driver.findElement(By.xpath("//input[@id='j_idt88:j_idt95']")).clear(); 
+                
+                      driver.findElement(By.xpath("//textarea[contains(@class,'ui-inputfield ui-inputtextarea')]")).sendKeys("I am Bhadra"); 
+                       
+                       
+                      ///Button//// 
+                      driver.get("https://www.leafground.com/button.xhtml"); 
+                       driver.manage().window().maximize(); 
+                       
+                      //to get title 
+                      driver.findElement(By.xpath("//span[@class='ui-button-text ui-c']")).click(); 
+                      String title = driver.getTitle(); 
+                      System.out.println(title); 
+                       
+                      //to check button is disabled 
+                      driver.get("https://www.leafground.com/button.xhtml"); 
+                       driver.manage().window().maximize(); 
+                      boolean enabled1 = driver.findElement(By.xpath("//button[@id='j_idt88:j_idt92']")).isEnabled(); 
+                 
+                       Thread.sleep(1000); 
+                     if(enabled1==false) 
+                       { 
+                               System.out.println("Disabled"); 
+                               
+                       } 
+                       else 
+                               { 
+                               System.out.println("Enabled"); 
+                               } 
+                       
+                      //to get position of submit button 
+                       
+                              WebElement f2 = driver.findElement(By.xpath("(//span[@class='ui-button-text ui-c'])[3]")); 
+                      System.out.println(f2.getLocation()); 
+                       
+                
+                
+                
+                
+        } 
+
+}

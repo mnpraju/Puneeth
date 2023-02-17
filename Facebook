@@ -1,0 +1,35 @@
+package week2.Day2; 
+
+import org.openqa.selenium.By; 
+import org.openqa.selenium.chrome.ChromeDriver; 
+import org.openqa.selenium.support.ui.Select; 
+
+public class Facebook { 
+
+        public static void main(String[] args) throws InterruptedException { 
+                // TODO Auto-generated method stub 
+                ChromeDriver driver=new ChromeDriver(); 
+               
+               driver.get("https://en-gb.facebook.com/"); 
+               driver.manage().window().maximize(); 
+               Thread.sleep(2000); 
+               driver.findElement(By.xpath("//a[contains(text(),'Create new account')]")).click(); 
+            Thread.sleep(1000); 
+               driver.findElement(By.xpath("//input[contains(@name,'firstname')]")).sendKeys("Test"); 
+             driver.findElement(By.xpath("//input[contains(@name,'lastname')]")).sendKeys("leaf"); 
+             driver.findElement(By.xpath("//input[contains(@name,'reg_email__')]")).sendKeys("93547253846"); 
+             driver.findElement(By.xpath("//input[contains(@id,'password_step_input')]")).sendKeys("93547253846"); 
+             Select se = new Select(driver.findElement(By.xpath("//select[@id='day']"))); 
+             se.selectByVisibleText("13"); 
+              
+             Select select = new Select(driver.findElement(By.xpath("//select[@id='month']"))); 
+              select.selectByVisibleText("Apr"); 
+              Select select1 = new Select(driver.findElement(By.xpath("//select[@id='year']"))); 
+              select1.selectByVisibleText("1993"); 
+              driver.findElement(By.xpath("//label[@class='_58mt']")).click(); 
+               
+               
+               
+        } 
+
+}

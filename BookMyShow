@@ -1,0 +1,72 @@
+package marathons;
+
+import java.time.Duration; 
+import org.openqa.selenium.By; 
+import org.openqa.selenium.Keys; 
+import org.openqa.selenium.WebElement; 
+import org.openqa.selenium.edge.EdgeDriver;
+
+public class AssBookMyShow { 
+        public static void main(String[] args) throws InterruptedException { 
+                EdgeDriver driver=new EdgeDriver(); 
+                driver.get("https://in.bookmyshow.com/"); 
+                driver.manage().window().maximize(); 
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15)); 
+                String url = driver.getCurrentUrl(); 
+                System.out.println(url); 
+                driver.findElement(By.xpath("//span[contains(text(),'Hyderabad')]")).click(); 
+                Thread.sleep(1000); 
+                String titleofNewPage = driver.getCurrentUrl(); 
+                System.out.println(titleofNewPage); 
+                if(url!=titleofNewPage) 
+                { 
+                        System.out.println("The page Title comes along with the searched text"); 
+                } 
+                else 
+                { 
+                        System.out.println("Both pages have same url's"); 
+                } 
+                //span[contains(@class,'sc-fcdeBU')]")).click(); 
+                driver.findElement(By.xpath("//span[contains(text(),'Search for Movies')]")).click(); 
+                Thread.sleep(1000); 
+                WebElement searchele = driver.findElement(By.xpath("//input[contains(@placeholder,'Search for Movies, Events,')]")); searchele.click(); 
+                searchele.sendKeys("vedalam"); 
+                Thread.sleep(500); 
+                searchele.sendKeys(Keys.ENTER); 
+                Thread.sleep(2000); 
+                driver.findElement(By.xpath("//div[@id='page-cta-container']/button")).click(); 
+                driver.findElement(By.xpath("//button[@id='wzrk-confirm']")).click(); 
+                Thread.sleep(500); 
+                String theatreName = driver.findElement(By.className("__venue-name")).getText(); 
+                System.out.println(theatreName); 
+                driver.findElement(By.className("venue-info-text")).click(); 
+                WebElement parkingEle = driver.findElement(By.xpath("//div[contains(text(),'Parking')]")); 
+                String text = parkingEle.getText(); 
+                System.out.println(text); 
+                if(text.contains("Parking")) 
+                { 
+                        System.out.println("Parking Facility is available" + text); 
+                } 
+                else 
+                { 
+                        System.out.println("Parking Facility is not available in theatre"); 
+                } 
+                driver.findElement(By.className("cross-container")).click(); 
+                driver.findElement(By.xpath("//div[@class='showtime-pill-container _available']/a")).click(); 
+                //driver.findElement(By.id("btnPopupAccept")).click(); 
+                Thread.sleep(1000); 
+                driver.findElement(By.xpath("(//ul[@id='popQty']/li)[1]")).click(); 
+                driver.findElement(By.id("proceed-Qty")).click(); 
+                Thread.sleep(1000); 
+                //(//td[@class='SRow1'])[5]/div[5] 
+                driver.findElement(By.xpath("//a[@class='_available']")).click(); 
+                //WebElement seatAlloc = driver.findElement(By.xpath("//a[text()='5']")); 
+                //driver.executeScript("arguments[0].click();",seatAlloc); 
+                driver.findElement(By.id("btmcntbook")).click(); 
+                Thread.sleep(500); 
+            String tot=driver.findElement(By.xpath("//span[@id='subTT']")).getText(); 
+                System.out.println("amount to be paid :"+tot); 
+                        } 
+                }
+
+

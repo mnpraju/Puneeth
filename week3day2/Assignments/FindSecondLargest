@@ -1,0 +1,35 @@
+package week3.day2Collections;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.TreeSet;
+
+public class FindSecondLargest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+		int[] data = {3,2,11,4,6,7,2,3,3,6,7};
+		//       output= 7;
+		TreeSet<Integer> ts = new TreeSet<Integer>();
+		for(int i :data)
+		{
+			ts.add(i);
+		}
+		System.out.println(ts);
+		ts.remove(ts.last());
+		System.out.println("Second largest is "+ts.last());
+		/*
+		 * Pseudo Code: 
+		 * a) Create a empty Set Using TreeSet
+		 * b) Declare for loop iterator from 0 to data.length and add into Set 
+		 * c) converted Set into List
+		 * d) Print the second last element from List
+		 * 
+		 * 
+		 */
+		
+	}
+
+}

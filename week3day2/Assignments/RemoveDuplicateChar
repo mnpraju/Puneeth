@@ -1,0 +1,30 @@
+package week3.day2Collections;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+
+public class RemoveDuplicateChar {
+	static void removeDuplicate(char str[], int n)
+    {
+     
+        HashSet<Character> s = new LinkedHashSet<Character>(n - 1);
+     
+        for (char x : str)
+            s.add(x);
+ 
+      
+        for (char x : s)
+            System.out.print(x);
+    }
+ 
+ 
+    public static void main(String[] args)
+    {
+        char str[] = "PayPal India".toCharArray();
+        int n = str.length;
+ 
+        removeDuplicate(str, n);
+    }
+	
+
+}

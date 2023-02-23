@@ -1,0 +1,43 @@
+package week3.day2Collections;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class UniqueChar {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     
+	
+	    String str = "bhadra";
+	    char arr[] = str.toCharArray();
+	    
+	    HashSet<Character> set1=new HashSet<Character>();
+	    HashSet<Character> set2=new HashSet<Character>();
+
+	    
+	    for(char i:arr)
+	    {
+	        if(set1.contains(i))
+	        {
+	            set1.add(i);
+	            set2.remove(i);
+	            
+	        }
+	        else
+	        {
+	            
+	            set1.add(i);
+	            set2.add(i);
+	        }
+	    }
+	    String s=set2.toString();
+	    s=s.replace(","," ");
+	    s=s.replace("[","");
+	    s=s.replace("]","");
+	    System.out.println(s); 
+	
+		
+	}
+
+}

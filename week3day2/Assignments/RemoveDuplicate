@@ -1,0 +1,26 @@
+package week3.day2Collections;
+
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+
+public class RemoveDuplicate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+			
+			String sentence="We learn java basics as part of java sessions in java week1";
+			String result = "";
+			String allWords[];
+			allWords = sentence.split(" ");
+	        LinkedHashSet<String> set = new LinkedHashSet<String>( Arrays.asList(allWords) );
+			for(String word: set) {
+				result = result + word + " ";
+			}
+
+			System.out.println("Sentence after removing duplicate words: " + result);
+
+		
+	}
+
+}
